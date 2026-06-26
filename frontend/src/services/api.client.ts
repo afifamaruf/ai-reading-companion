@@ -4,7 +4,8 @@ import axios, {
   type AxiosResponse,
   type InternalAxiosRequestConfig,
 } from "axios";
-import { env } from "@/config/env";
+
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL ?? "http://Localhost:8000";
 
 // ---- Token Helpers -----------
 const TOKEN_KEY = "arc_access_token";
@@ -24,7 +25,7 @@ export const tokenStorage = {
 
 // ---- Axios instance -------
 export const apiClient: AxiosInstance = axios.create({
-  baseURL: env.API_BASE_URL,
+  baseURL: API_BASE_URL,
   timeout: 30_000,
   headers: {
     "Content-Type": "application/json",
