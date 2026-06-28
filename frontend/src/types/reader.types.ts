@@ -26,3 +26,18 @@ export interface CreateHighlightPayload {
   text: string;
   color: HighlightColor;
 }
+
+// Merepresentasikan satu entri di Table of Contents.
+export interface TocItem {
+  id: string;
+  label: string;
+  href: string;
+  subitems: TocItem[];
+}
+
+// State loading khusus untuk proses parsing EPUB
+export type ReaderLoadstatus =
+  | { state: "idle" }
+  | { state: "loading" }
+  | { state: "ready" }
+  | { state: "error"; message: string };
