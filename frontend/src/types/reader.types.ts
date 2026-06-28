@@ -36,7 +36,7 @@ export interface TocItem {
 }
 
 // State loading khusus untuk proses parsing EPUB
-export type ReaderLoadstatus =
+export type ReaderLoadStatus =
   | { state: "idle" }
   | { state: "loading" }
   | { state: "ready" }
